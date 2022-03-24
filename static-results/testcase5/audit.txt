@@ -1,0 +1,27 @@
+[INFO] Starting application using file (testcase5.txt)
+[CMD] useradd root 1234
+[INFO] User (root) successfully created!
+[CMD] logout
+[ERROR] Invalid logout command, no user is active
+[CMD] groupadd group
+[ERROR] Invalid groupadd operation, current active user must be root or have privilege
+[CMD] usergrp root group
+[ERROR] Invalid groupadd operation, current active user must be root or have privilege
+[CMD] mkfile asdf.txt
+[ERROR] Invalid mkfile command, no user logged in
+[CMD] chmod asdf.txt rwx rwx rwx
+[ERROR] Invalid chmod command, no user logged in
+[CMD] chgrp asdf.txt group
+[ERROR] Invalid chgrp command, no user logged in
+[CMD] chown asdf.txt root
+[ERROR] Invalid chown command, file does not exist
+[CMD] read asdf.txt
+[ERROR] Invalid read command, no user logged in
+[CMD] write asdf.txt message
+[ERROR] Invalid write command, no user logged in
+[CMD] execute asdf.txt
+[ERROR] Invalid execute command, no user logged in
+[CMD] ls asdf.txt
+[ERROR] Invalid ls operation, no user logged in
+[CMD] end
+[INFO] Terminating execution

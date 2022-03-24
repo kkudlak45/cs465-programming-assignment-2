@@ -1,0 +1,80 @@
+[INFO] Starting application using file (testcase1.txt)
+[CMD] useradd root ya84*_o
+[INFO] User (root) successfully created!
+[CMD] login root ya84*_o
+[INFO] Login successful, current active user is now (root)
+[CMD] useradd alice Wvu_4_Life
+[INFO] User (alice) successfully created!
+[CMD] useradd bob SHHHsecret
+[INFO] User (bob) successfully created!
+[CMD] groupadd students
+[INFO] Group (students) successfully created!
+[CMD] usergrp alice students
+[INFO] User (alice) successfully added to group (students)
+[CMD] usergrp bob students
+[INFO] User (bob) successfully added to group (students)
+[CMD] useradd tom geek_247
+[INFO] User (tom) successfully created!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login alice Wvu_4_Life
+[INFO] Login successful, current active user is now (alice)
+[CMD] mkfile file1.txt
+[INFO] File (file1.txt) successfully created!
+[CMD] write file1.txt Text from Alice in file1
+[INFO] File (file1.txt) successfully written to!
+[CMD] mkfile file2.txt
+[INFO] File (file2.txt) successfully created!
+[CMD] write file2.txt Text from Alice in file2
+[INFO] File (file2.txt) successfully written to!
+[CMD] chmod file2.txt rw- rw- r--
+[INFO] Permissions for file (file2.txt successfully updated!
+[CMD] chgrp file2.txt students
+[INFO] File (file2.txt) successfully added to group (students)
+[CMD] logout
+[INFO] Successful logout
+[CMD] login tom geek_247
+[INFO] Login successful, current active user is now (tom)
+[CMD] read file1.txt
+[ERROR] Invalid read command, active user does not have access and is not root
+[CMD] read file2.txt
+	Text from Alice in file2
+[INFO] File (file2.txt) successfully read from!
+[CMD] write file2.txt Text from Tom in file2
+[ERROR] Invalid write command, active user does not have access and is not root
+[CMD] login bob SHHsecret
+[ERROR] Invalid login command, there is already a user logged in
+[CMD] logout
+[INFO] Successful logout
+[CMD] login bob SHHsecret
+[ERROR] Invalid password for user (bob), login unsuccessful
+[CMD] login bob SHHHsecret
+[INFO] Login successful, current active user is now (bob)
+[CMD] write file2.txt Text from Bob in file2
+[INFO] File (file2.txt) successfully written to!
+[CMD] read file2.txt
+	Text from Alice in file2
+	Text from Bob in file2
+[INFO] File (file2.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login root ya84*_o
+[INFO] Login successful, current active user is now (root)
+[CMD] chown file1.txt tom
+[INFO] Owner of file (file1.txt) successfully updated to (tom)
+[CMD] ls file1.txt
+file1.txt: tom nil rw- --- ---
+[CMD] logout
+[INFO] Successful logout
+[CMD] login tom geek_247
+[INFO] Login successful, current active user is now (tom)
+[CMD] write file1.txt Text from Tom in file1
+[INFO] File (file1.txt) successfully written to!
+[CMD] read file1.txt
+	Text from Alice in file1
+	Text from Tom in file1
+[INFO] File (file1.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] end
+[INFO] Terminating execution

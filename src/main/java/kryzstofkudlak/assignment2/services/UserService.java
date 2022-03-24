@@ -2,8 +2,12 @@ package kryzstofkudlak.assignment2.services;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
+import kryzstofkudlak.assignment2.logger.EasyLogger;
+import kryzstofkudlak.assignment2.objects.Group;
 import kryzstofkudlak.assignment2.objects.User;
+import kryzstofkudlak.assignment2.utils.UniversalConstants;
 
 public class UserService {
 	
@@ -56,6 +60,23 @@ public class UserService {
 	
 	public static void setActiveUser(User user) {
 		activeUser = user;
+	}
+	
+	public static void printAllUsers() {
+		for (User user : users) {
+			EasyLogger.appendToFile(UniversalConstants.ACCOUNTS_FILE, user.getName() + ":" + user.getPassword() + ":");
+			Set<Group> groups = user.getGroups();
+			
+			if (groups.size() == 0) {
+				EasyLogger.appendToFile(UniversalConstants.ACCOUNTS_FILE, "nil\n");
+			}
+			else {
+				for (Group group : groups) {
+					EasyLogger.appendToFile(UniversalConstants.ACCOUNTS_FILE, group.getName() + " ");
+				}
+				EasyLogger.appendToFile(UniversalConstants.ACCOUNTS_FILE, "\n");
+			}
+		}
 	}
 	
 }

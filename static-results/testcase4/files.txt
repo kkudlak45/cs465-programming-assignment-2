@@ -1,0 +1,1 @@
+rootfile.txt: admin people --- --- ---

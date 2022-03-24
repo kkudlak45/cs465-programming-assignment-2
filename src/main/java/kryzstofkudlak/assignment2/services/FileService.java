@@ -1,6 +1,8 @@
 package kryzstofkudlak.assignment2.services;
 
+import kryzstofkudlak.assignment2.logger.EasyLogger;
 import kryzstofkudlak.assignment2.objects.File;
+import kryzstofkudlak.assignment2.utils.UniversalConstants;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +41,14 @@ public class FileService {
 	
 	public static List<File> getFiles() {
 		return files;
+	}
+	
+	public static void printAllFiles() {
+		for (File file : files) {
+			EasyLogger.appendToFile(UniversalConstants.FILES_FILE, 
+					file.getName() + ": " + file.getOwner().getName() + " " + file.getGroup().getName() + " "
+					+ file.getOwnerAccess() + " " + file.getGroupAccess() + " " + file.getGlobalAccess() + "\n");
+		}
 	}
 	
 }

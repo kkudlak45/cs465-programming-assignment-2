@@ -1,0 +1,3 @@
+[INFO] Starting application using file (testcase3.txt)
+[ERROR] First command was not useradd root, terminating program
+[INFO] Terminating execution

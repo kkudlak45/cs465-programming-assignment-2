@@ -25,4 +25,8 @@ public class Group {
 		return this.usersInGroup.contains(userToCheck);
 	}
 	
+	public Set<User> getUsers() {
+		return this.usersInGroup;
+	}
+	
 }

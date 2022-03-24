@@ -1,0 +1,186 @@
+[INFO] Starting application using file (testcase4.txt)
+[CMD] useradd root abcd
+[INFO] User (root) successfully created!
+[CMD] login root hijk
+[ERROR] Invalid password for user (root), login unsuccessful
+[CMD] login toor abcd
+[ERROR] Invalid username, user (toor) not found
+[CMD] login root abcd
+[INFO] Login successful, current active user is now (root)
+[CMD] useradd admin 1234
+[INFO] User (admin) successfully created!
+[CMD] useradd jeff 5678
+[INFO] User (jeff) successfully created!
+[CMD] useradd roger 1111
+[INFO] User (roger) successfully created!
+[CMD] useradd john 2222
+[INFO] User (john) successfully created!
+[CMD] groupadd people
+[INFO] Group (people) successfully created!
+[CMD] groupadd goats
+[INFO] Group (goats) successfully created!
+[CMD] usergrp admin goats
+[INFO] User (admin) successfully added to group (goats)
+[CMD] usergrp john goats
+[INFO] User (john) successfully added to group (goats)
+[CMD] usergrp john people
+[INFO] User (john) successfully added to group (people)
+[CMD] usergrp roger people
+[INFO] User (roger) successfully added to group (people)
+[CMD] usergrp jeff goats
+[INFO] User (jeff) successfully added to group (goats)
+[CMD] usergrp jeff people
+[INFO] User (jeff) successfully added to group (people)
+[CMD] usergrp tom people
+[ERROR] Invalid usergrp command, user (tom) does not exist
+[CMD] mkfile rootfile.txt
+[INFO] File (rootfile.txt) successfully created!
+[CMD] write rootfile.txt hello world it is i the root man!
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] write rootfile.txt this is another line in the root file
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] write rootfile.txt i am still writing in this file
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] write rootfile.txt this better be appending and not overwriting
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] execute rootfile.txt
+[INFO] File (rootfile.txt) successfully executed!
+[CMD] ls rootfile.txt
+rootfile.txt: root nil rw- --- ---
+[CMD] chmod rootfile.txt rwx rwx rwx
+[INFO] Permissions for file (rootfile.txt successfully updated!
+[CMD] ls rootfile.txt
+rootfile.txt: root nil rwx rwx rwx
+[CMD] execute rootfile.txt
+[INFO] File (rootfile.txt) successfully executed!
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login admin 1234
+[INFO] Login successful, current active user is now (admin)
+[CMD] chown rootfile.txt admin
+[ERROR] Invalid chown command, active user must be root
+[CMD] chown admin rootfile.txt
+[ERROR] Invalid chown command, file does not exist
+[CMD] chgrp rootfile.txt goats
+[ERROR] Invalid chgrp command, file is not owned by user and user does not have privilege
+[CMD] chgrp rootfile.txt people
+[ERROR] Invalid chgrp command, file is not owned by user and user does not have privilege
+[CMD] write rootfile.txt darn i (the admin) couldnt chown or chgrp this file
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] execute rootfile.txt
+[INFO] File (rootfile.txt) successfully executed!
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+	darn i (the admin) couldnt chown or chgrp this file
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] ls rootfile.txt
+rootfile.txt: root nil rwx rwx rwx
+[CMD] logout
+[INFO] Successful logout
+[CMD] login root abcd
+[INFO] Login successful, current active user is now (root)
+[CMD] chown rootfile.txt admin
+[INFO] Owner of file (rootfile.txt) successfully updated to (admin)
+[CMD] chgrp rootfile.txt people
+[INFO] File (rootfile.txt) successfully added to group (people)
+[CMD] chmod rootfile.txt rwx rw- r--
+[INFO] Permissions for file (rootfile.txt successfully updated!
+[CMD] ls rootfile.txt
+rootfile.txt: admin people rwx rw- r--
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+	darn i (the admin) couldnt chown or chgrp this file
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] write rootfile.txt hello from root
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] execute rootfile.txt
+[INFO] File (rootfile.txt) successfully executed!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login admin 1234
+[INFO] Login successful, current active user is now (admin)
+[CMD] execute rootfile.txt
+[INFO] File (rootfile.txt) successfully executed!
+[CMD] write rootfile.txt hello from admin
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+	darn i (the admin) couldnt chown or chgrp this file
+	hello from root
+	hello from admin
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login john 2222
+[INFO] Login successful, current active user is now (john)
+[CMD] execute rootfile.txt
+[ERROR] Invalid execute command, active user does not have access and is not root
+[CMD] write rootfile.txt hello from people group
+[INFO] File (rootfile.txt) successfully written to!
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+	darn i (the admin) couldnt chown or chgrp this file
+	hello from root
+	hello from admin
+	hello from people group
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login root abcd
+[INFO] Login successful, current active user is now (root)
+[CMD] useradd newuser abcd
+[INFO] User (newuser) successfully created!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login newuser abcd
+[INFO] Login successful, current active user is now (newuser)
+[CMD] execute rootfile.txt
+[ERROR] Invalid execute command, active user does not have access and is not root
+[CMD] write rootfile.txt hello from new user
+[ERROR] Invalid write command, active user does not have access and is not root
+[CMD] read rootfile.txt
+	hello world it is i the root man!
+	this is another line in the root file
+	i am still writing in this file
+	this better be appending and not overwriting
+	darn i (the admin) couldnt chown or chgrp this file
+	hello from root
+	hello from admin
+	hello from people group
+[INFO] File (rootfile.txt) successfully read from!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login admin 1234 
+[INFO] Login successful, current active user is now (admin)
+[CMD] chmod rootfile.txt --- --- ---
+[INFO] Permissions for file (rootfile.txt successfully updated!
+[CMD] ls rootfile.txt
+rootfile.txt: admin people --- --- ---
+[CMD] execute rootfile.txt
+[ERROR] Invalid execute command, active user does not have access and is not root
+[CMD] write rootfile.txt hello from admin again
+[ERROR] Invalid write command, active user does not have access and is not root
+[CMD] read rootfile.txt
+[ERROR] Invalid read command, active user does not have access and is not root
+[CMD] logout
+[INFO] Successful logout
+[CMD] end
+[INFO] Terminating execution

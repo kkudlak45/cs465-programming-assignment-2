@@ -19,6 +19,9 @@ import kryzstofkudlak.assignment2.drivers.UserAdd;
 import kryzstofkudlak.assignment2.drivers.UserGroup;
 import kryzstofkudlak.assignment2.drivers.WriteFile;
 import kryzstofkudlak.assignment2.logger.EasyLogger;
+import kryzstofkudlak.assignment2.services.FileService;
+import kryzstofkudlak.assignment2.services.GroupService;
+import kryzstofkudlak.assignment2.services.UserService;
 
 public class Access {
 	
@@ -48,6 +51,15 @@ public class Access {
 		}
 		return false;
 	}
+	
+	private static void endSequence(Scanner scanner) {
+		EasyLogger.info("Terminating execution");
+		UserService.printAllUsers();
+		GroupService.printAllGroups();
+		FileService.printAllFiles();
+		scanner.close();
+		EasyLogger.closeStreams();
+	}
 
 	public static void main(String[] args) {
 		
@@ -60,6 +72,16 @@ public class Access {
 		
 		InputStream inputStream = ClassLoader.getSystemResourceAsStream(filename);
 		Scanner scanner = new Scanner(inputStream);
+		
+		String firstLine = scanner.nextLine(); // check that i don't have to crash the program
+		if (!firstLine.substring(0, 12).equals("useradd root")) {
+			EasyLogger.error("First command was not useradd root, terminating program");
+			endSequence(scanner);
+			return;
+		}
+		EasyLogger.command(firstLine.strip());
+		sendToDrivers(firstLine);
+		
 		while (scanner.hasNextLine()) {
 			String cmd = scanner.nextLine();
 			EasyLogger.command(cmd);
@@ -67,15 +89,12 @@ public class Access {
 				break;
 			}
 			
-			if (!sendToDrivers(cmd)) {
+			if (!sendToDrivers(cmd.strip())) {
 				EasyLogger.error("Unrecognized command!");
 			}
 		}
 		
-		EasyLogger.info("Terminating execution");
-		scanner.close();
-		EasyLogger.closeStreams();
-		
+		endSequence(scanner);
 	}
 
 }

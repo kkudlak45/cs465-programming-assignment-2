@@ -1,0 +1,78 @@
+useradd root abcd
+login root hijk
+login toor abcd
+login root abcd
+useradd admin 1234
+useradd jeff 5678
+useradd roger 1111
+useradd john 2222
+groupadd people
+groupadd goats
+usergrp admin goats
+usergrp john goats
+usergrp john people
+usergrp roger people
+usergrp jeff goats
+usergrp jeff people
+usergrp tom people
+mkfile rootfile.txt
+write rootfile.txt hello world it is i the root man!
+write rootfile.txt this is another line in the root file
+write rootfile.txt i am still writing in this file
+write rootfile.txt this better be appending and not overwriting
+execute rootfile.txt
+ls rootfile.txt
+chmod rootfile.txt rwx rwx rwx
+ls rootfile.txt
+execute rootfile.txt
+read rootfile.txt
+logout
+login admin 1234
+chown rootfile.txt admin
+chown admin rootfile.txt
+chgrp rootfile.txt goats
+chgrp rootfile.txt people
+write rootfile.txt darn i (the admin) couldnt chown or chgrp this file
+execute rootfile.txt
+read rootfile.txt
+ls rootfile.txt
+logout
+login root abcd
+chown rootfile.txt admin
+chgrp rootfile.txt people
+chmod rootfile.txt rwx rw- r--
+ls rootfile.txt
+read rootfile.txt
+write rootfile.txt hello from root
+execute rootfile.txt
+logout
+login admin 1234
+execute rootfile.txt
+write rootfile.txt hello from admin
+read rootfile.txt
+logout
+login john 2222
+execute rootfile.txt
+write rootfile.txt hello from people group
+read rootfile.txt
+logout
+login root abcd
+useradd newuser abcd
+logout
+login newuser abcd
+execute rootfile.txt
+write rootfile.txt hello from new user
+read rootfile.txt
+logout
+login admin 1234 
+chmod rootfile.txt --- --- ---
+ls rootfile.txt
+execute rootfile.txt
+write rootfile.txt hello from admin again
+read rootfile.txt
+logout
+end
+
+
+
+

@@ -1,0 +1,2 @@
+people { jeff roger john }
+goats { admin jeff john }

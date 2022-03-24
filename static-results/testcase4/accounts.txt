@@ -1,0 +1,6 @@
+root:abcd:nil
+admin:1234:goats 
+jeff:5678:people goats 
+roger:1111:people 
+john:2222:people goats 
+newuser:abcd:nil

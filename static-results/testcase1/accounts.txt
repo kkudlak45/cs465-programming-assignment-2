@@ -1,0 +1,4 @@
+root:ya84*_o:nil
+alice:Wvu_4_Life:students 
+bob:SHHHsecret:students 
+tom:geek_247:nil

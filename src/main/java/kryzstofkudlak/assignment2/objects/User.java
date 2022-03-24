@@ -39,6 +39,10 @@ public class User {
 		return this.groups.contains(group);
 	}
 	
+	public Set<Group> getGroups() {
+		return this.groups;
+	}
+	
 	
 	// accomplish sudo
 	public void givePrivilege() {

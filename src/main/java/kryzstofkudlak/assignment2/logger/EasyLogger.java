@@ -43,7 +43,6 @@ public class EasyLogger {
 		try {
 			File outFile = new File(PREFIX + filename);
 			if (!outFile.exists()) {
-				System.out.println("Creating file");
 				outFile.createNewFile();
 			}
 			
@@ -59,7 +58,7 @@ public class EasyLogger {
 			output.write((text).getBytes());
 		}
 		catch (IOException e) {
-			error("Exception trying to write to file");
+			e.printStackTrace();
 		}
 	}
 	

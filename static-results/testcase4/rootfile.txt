@@ -1,0 +1,8 @@
+hello world it is i the root man!
+this is another line in the root file
+i am still writing in this file
+this better be appending and not overwriting
+darn i (the admin) couldnt chown or chgrp this file
+hello from root
+hello from admin
+hello from people group
