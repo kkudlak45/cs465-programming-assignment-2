@@ -1,0 +1,73 @@
+[INFO] Starting application using file (testcase2.txt)
+[CMD] useradd root @r00t(705)
+[INFO] User (root) successfully created!
+[CMD] login root @r00t(705)
+[INFO] Login successful, current active user is now (root)
+[CMD] useradd steveo d@man^304
+[INFO] User (steveo) successfully created!
+[CMD] useradd rita #101'holla!
+[INFO] User (rita) successfully created!
+[CMD] groupadd testers
+[INFO] Group (testers) successfully created!
+[CMD] useradd steveo tada043.,;
+[ERROR] Invalid useradd operation, username (steveo) already exists
+[CMD] logout
+[INFO] Successful logout
+[CMD] login steve d@man^304
+[ERROR] Invalid username, user (steve) not found
+[CMD] login steveo d@man^304
+[INFO] Login successful, current active user is now (steveo)
+[CMD] mkfile script
+[INFO] File (script) successfully created!
+[CMD] write script echo Hello World!
+[INFO] File (script) successfully written to!
+[CMD] chmod script -wx rw- --x
+[INFO] Permissions for file (script successfully updated!
+[CMD] chmod script2 rwx rwx rwx
+[ERROR] Invalid chmod command, file does not exist
+[CMD] chgrp script testers
+[ERROR] Invalid chgrp command, user is not privileged or in group (testers)
+[CMD] execute script
+[INFO] File (script) successfully executed!
+[CMD] logout
+[INFO] Successful logout
+[CMD] ls script
+[ERROR] Invalid ls operation, no user logged in
+[CMD] login root @r00t(705)
+[INFO] Login successful, current active user is now (root)
+[CMD] useradd rita #101'holla!
+[ERROR] Invalid useradd operation, username (rita) already exists
+[CMD] chgrp script testers
+[INFO] File (script) successfully added to group (testers)
+[CMD] groupadd testers
+[ERROR] Invalid groupadd operation, a group named (testers) already exists
+[CMD] usergrp rita testers
+[INFO] User (rita) successfully added to group (testers)
+[CMD] usergrp steveo testers
+[INFO] User (steveo) successfully added to group (testers)
+[CMD] chown script3 rita
+[ERROR] Invalid chown command, file does not exist
+[CMD] execute script
+[INFO] File (script) successfully executed!
+[CMD] logout
+[INFO] Successful logout
+[CMD] login rita #101'holla!
+[INFO] Login successful, current active user is now (rita)
+[CMD] mkfile script
+[ERROR] Invalid mkfile command, file named (script) already exists.
+[CMD] write script echo Hello World!
+[INFO] File (script) successfully written to!
+[CMD] read script
+	echo Hello World!
+	echo Hello World!
+[INFO] File (script) successfully read from!
+[CMD] execute script
+[INFO] File (script) successfully executed!
+[CMD] groupadd developers
+[ERROR] Invalid groupadd operation, current active user must be root or have privilege
+[CMD] useradd stew awwShucks
+[ERROR] Invalid useradd operation, current active user is not privileged
+[CMD] logout
+[INFO] Successful logout
+[CMD] end
+[INFO] Terminating execution
