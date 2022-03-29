@@ -8,7 +8,7 @@ Example command line execution:
 
 `./gradlew run –-args=’testcase1.txt’`
 
-The specified input file must be located in `src/main/resources` since it will be loaded in as a classpath resource.
+The specified input file must be located in `src/main/resources` since it will be loaded in as a classpath resource. By default, testcase1.txt - testcase5.txt are stored in this directory.
 
 An alternative to command line execution would be to load the project into Eclipse & run it from there. To do so:
 - Import as a gradle project. File > Import… > Gradle > Existing Gradle Project > Next > > Browse… > select the root directory of the project > Finish
