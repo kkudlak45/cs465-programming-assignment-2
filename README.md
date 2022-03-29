@@ -6,7 +6,7 @@ If you want to compile and run my program from command line, follow these steps:
 
 Example command line execution:
 
-`./gradlew run –args=’testcase1.txt’`
+`./gradlew run –-args=’testcase1.txt’`
 
 The specified input file must be located in `src/main/resources` since it will be loaded in as a classpath resource.
 
